@@ -1,0 +1,10 @@
+{
+  "Gatsby supports TypeScript by default!": {
+    "origin": [
+      [
+        "src/pages/using-typescript.tsx",
+        11
+      ]
+    ]
+  }
+}

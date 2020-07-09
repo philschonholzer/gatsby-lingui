@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { Trans } from "@lingui/react"
 import { Link, withLingui } from "@wapps/gatsby-plugin-lingui"
 

@@ -8,11 +8,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { withI18n } from "@lingui/react"
+import { Head } from "@wapps/gatsby-plugin-lingui"
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, i18n }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,6 +27,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Head hreflang>
+        <title>{i18n.t`Gatsby Starter Lingui`}</title>
+        <meta name="description" content="Sample" />
+        <meta name="keywords" content="gatsby, react, wapps, lingui" />
+      </Head>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -48,4 +55,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default withI18n()(Layout)
